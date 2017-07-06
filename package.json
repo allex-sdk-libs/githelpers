@@ -1,0 +1,30 @@
+{
+  "name": "allex_githelperssdklib",
+  "version": "1.0.0",
+  "description": "AllexJS sdk lib for git manipulation",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allex-sdk-libs/githelpers.git"
+  },
+  "dependencies": {
+    "allex_nodehelpersserverruntimelib": "1.x",
+    "ini": "1.x"
+  },
+  "keywords": [
+    "ecosystem:AllexJS",
+    "git",
+    "helpers",
+    "sdk",
+    "lib"
+  ],
+  "author": "Andrija Petrovic <andrija.hers@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allex-sdk-libs/githelpers/issues"
+  },
+  "homepage": "https://github.com/allex-sdk-libs/githelpers#readme"
+}
