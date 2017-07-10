@@ -156,10 +156,14 @@ function createGitHelpers (lib) {
   }
 
   function getRepoName (gitpath) {
-    var np = gitpath.replace('git+ssh://'),
-      rp = np.substring(np.indexOf(':')),
-      spl = rp.split('/');
-      return spl[spl.length-1].replace(/\.git$/,'');
+    var np, rp, spl;
+    if (!lib.isString(gitpath)) {
+      return '';
+    }
+    np = gitpath.replace('git+ssh://');
+    rp = np.substring(np.indexOf(':'));
+    spl = rp.split('/');
+    return spl[spl.length-1].replace(/\.git$/,'');
   }
 
   function execSync (command, cwd){
