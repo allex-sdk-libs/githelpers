@@ -167,6 +167,7 @@ function createGitHelpers (lib) {
   }
 
   function execSync (command, cwd){
+    console.log('about to do a command ', command);
     return ChildProcess.execSync(command,{cwd: cwd || 'node_modules'}).toString();
   }
 
@@ -174,6 +175,9 @@ function createGitHelpers (lib) {
     if (!Fs.existsSync(Path.join(dir, '.git'))){
       throw new Error('Not a git repo');
     }
+
+    var branch = execSync ('git branch', dir);
+    if (!branch || !branch.length) return true; //no branch ... nothing to be done here ... TODO: reconsider this one ...
 
     var uncommited = execSync('git ls-files --others -m --exclude-standard', dir);
     if (uncommited.length) { throw new Error('Uncommited or not added files detected, cowardly retreating: '+uncommited); }
