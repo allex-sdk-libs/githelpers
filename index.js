@@ -167,7 +167,7 @@ function createGitHelpers (lib) {
   }
 
   function execSync (command, cwd){
-    console.log('about to do a command ', command);
+    //console.log('about to do a command ', command);
     return ChildProcess.execSync(command,{cwd: cwd || 'node_modules'}).toString();
   }
 
